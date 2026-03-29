@@ -7,6 +7,21 @@ from importlib.util import spec_from_file_location, module_from_spec
 from lib.path_utils import get_home_path_and_path_splitter
 
 
+def load_function(lib_path_filename, function_name):
+    # load_function
+    """
+    load python function from file
+    :param lib_path_filename: str
+    :param function_name: str
+    :return: function
+    """
+    spec = spec_from_file_location('lib_name', lib_path_filename)
+    module = module_from_spec(spec)
+    spec.loader.exec_module(module)
+    func = getattr(module, function_name)
+    return func
+
+
 def _load_class_module(module_path_name):
     # load_class_module
     """
