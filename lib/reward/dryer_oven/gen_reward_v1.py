@@ -70,16 +70,12 @@ def _generate_reward_v2(inner_temp, target_temp, action, temp_limit_depth=10.0):
     if diff < -2.0:  # [저온 상태] 80도 미만
         if action == 0:   # DOWN (팬 감속 -> 온도 상승 유도): 정답
             reward += 10.0 
-        elif action == 2: # UP (팬 가속 -> 온도 추가 하락): 치명적 오류
-            reward -= 30.0
-        else:
+        else: # UP or KEEP (팬 가속 -> 온도 추가 하락): 치명적 오류
             reward -= 30.0
     elif diff > 2.0: # [고온 상태] 80도 초과
         if action == 2:   # UP (팬 가속 -> 온도 하락 유도): 정답
             reward += 10.0
-        elif action == 0: # DOWN (팬 감속 -> 온도 추가 상승): 치명적 오류
-            reward -= 30.0
-        else:
+        else: # DOWN or KEEP (팬 감속 -> 온도 추가 상승): 치명적 오류
             reward -= 30.0
 
     # 3. 안정성 보상 (목표 도달 후 불필요한 떨림 방지)

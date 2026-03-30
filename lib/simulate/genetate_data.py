@@ -27,8 +27,8 @@ def generate_data_v1(drop_envs,
     :type initial_temp: float
     :param verbose: verbose
     :type verbose: int
-    :return: None
-    :rtype: None
+    :return: csv_file_pathname
+    :rtype: str
     """
     print(f'Start to generate sample data. [{datetime.now()}]')
 
@@ -130,3 +130,4 @@ def generate_data_v1(drop_envs,
     # CSV 파일로 저장
     df.to_csv(csv_file_pathname, index=False)
     print(f'End to generate sample data. [{datetime.now()}]')
+    return csv_file_pathname
