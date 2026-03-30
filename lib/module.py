@@ -98,6 +98,6 @@ def load_all_dynamic_module(run_mode):
     for file in file_list:
         name_ext = file.split(".")
         if len(name_ext) == 2 and name_ext[1] == "py":
-            cls = load_class_module(class_name=name_ext[0], run_mode=run_mode)
+            cls = _load_class_module(class_name=name_ext[0])
             class_cols[name_ext[0]] = cls
     return class_cols

@@ -12,7 +12,7 @@ class DryerOvenSimulation:
     """
     DryerOvenSimulation 클래스는 건조기 오븐의 시뮬레이션을 제공합니다.
     """
-    def __init__(self, target_temp=80.0, initial_temp=25.0):
+    def __init__(self, target_temp=80.0, initial_temp=25.0, debug=0):
         """
         Initializes the dryer oven simulation.
 
@@ -22,6 +22,7 @@ class DryerOvenSimulation:
         self.target_temp = target_temp
         self.current_temp = initial_temp
         self.time_step = 0
+        self._debug = debug
     
     def step(self, action, state):
         """
@@ -65,7 +66,8 @@ class DryerOvenSimulation:
         # 4. 결과 검증 (인지 확인)
         # - UP(2) 클릭 -> RPM 상승 -> cooling_factor 상승 -> heat_loss 상승 -> temp_change 감소 -> 온도 하락
         # - DOWN(0) 클릭 -> RPM 하락 -> cooling_factor 하락 -> heat_loss 하락 -> temp_change 증가 -> 온도 상승
-        print(f"Action: {action}, Fan RPM: {fan_rpm:.1f}, Cooling Factor: {cooling_factor:.3f}, Heat Loss: {heat_loss:.2f}, Temp Change: {temp_change:.2f}, New Inner Temp: {new_inner_temp:.2f}" )
+        if self._debug > 0:
+            print(f"Action: {action}, Fan RPM: {fan_rpm:.1f}, Cooling Factor: {cooling_factor:.3f}, Heat Loss: {heat_loss:.2f}, Temp Change: {temp_change:.2f}, New Inner Temp: {new_inner_temp:.2f}" )
         return {
                 "timestamp": timestamp,
                 "inner_temp": new_inner_temp,
