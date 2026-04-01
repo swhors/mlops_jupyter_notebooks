@@ -30,3 +30,13 @@ class UriType(Enum):
         if uri_str.startswith("nfs://"):
             return cls.URI_NFS
         return cls.URI_UNKNOWN
+
+
+def unpack_nptype(np_value):
+    import numpy
+    import numpy as np
+    if isinstance(np_value, (numpy.float32, numpy.float64, np.float32, np.float64,
+                             numpy.int32, numpy.int64, np.int32, np.int64,
+                             numpy.ndarray, np.ndarray)):
+        return np_value.item()
+    return np_value

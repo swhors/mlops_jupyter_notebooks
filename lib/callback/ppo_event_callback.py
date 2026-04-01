@@ -31,6 +31,7 @@ class PPOEventCallback(BaseCallback):
         if self.verbose > 1:
             print(f"\n📥 [Event] 데이터 수집 시작 (현재 스텝: {self.num_timesteps})")
 
+    # def _on_step(self, locals, globals) -> bool:
     def _on_step(self, locals, globals) -> bool:
         """새로운 스텝"""
         # # 주기적으로 성능 체크 및 모델 저장

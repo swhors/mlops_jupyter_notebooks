@@ -394,7 +394,7 @@ def generate_reward(inner_temp, action, target_temp, prev_inner_temp=None, temp_
               _generate_reward_v7,
               _generate_reward_v8,
               _generate_reward_v9)
-    reward = gen_func[7](inner_temp=inner_temp,
+    reward = gen_func[8](inner_temp=inner_temp,
                          target_temp=target_temp,
                          action=action,
                          temp_limit_depth=temp_limit_depth)
