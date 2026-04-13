@@ -1,0 +1,12 @@
+{
+  "args": [
+    "--gpus",
+    "0",
+    "--in-dir",
+    "sample_img/",
+    "--pretrained_path",
+    "weights/coco.pth.tar",
+    "--model-name",
+    "coco"
+  ]
+}

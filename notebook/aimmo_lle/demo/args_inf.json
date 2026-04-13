@@ -1,0 +1,12 @@
+{
+  "args": [
+    "--gpu",
+    "--in-dir",
+    "/ext/Dataset/noah/",
+    "--save-dir",
+    "/ext/Dataset/noah/lle/Paris_cam0_apillar_color_003_M_asian_g_240321_2020_sunny/",
+    "--pretrained-path",
+    "/home/datalab/clid/vision_analysis/DCE/Zero-DCE++/snapshots_Zero_DCE++/Epoch99-raw.pth"
+
+  ]
+}
