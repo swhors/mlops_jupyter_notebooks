@@ -1,0 +1,12 @@
+{
+  "DatasetConfig": {
+    "class_list": ["cloudy", "sunny", "rain"],
+    "train_dir": "tiny_data/images/train",
+    "val_dir" : "tiny_data/images/val",
+    "dataset": "aimmo",
+    "dataset_download": true,
+    "meta_name": "weather",
+    "train_json": "tiny_data/train.json",
+    "val_json": "tiny_data/val.json"
+  }
+}

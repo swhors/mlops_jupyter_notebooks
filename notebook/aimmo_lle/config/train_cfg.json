@@ -1,0 +1,65 @@
+{
+  "ModelConfig": {
+    "model_name" : "swin_base",
+    "img_size" : 384,
+    "pretrained" : true,
+    "optim" : "AdamW",
+    "amp" : true,
+    "early_stop" : true,
+    "kill_stop" : false,
+    "resume" : false,
+    "epochs" : 30,
+    "start_epoch" : 0,
+    "work_dir" : "",
+    "backbone" : "swin_B_384_22k",
+    "pretrained_path" : ""
+  },
+  "AugConfig": {
+    "cutout" : true,
+    "n_holes" : 1,
+    "length" : -1,
+    "cut_fact" : 0.5,
+    "orid_norm" : false
+  },
+  "TransformerConfig":{
+    "enc_layers" : 1,
+    "dec_layers" : 2,
+    "dim_feedforward" : 8192,
+    "hidden_dim" : 1024,
+    "dropout" : 0.1,
+    "nheads" : 4,
+    "pre_norm" : false,
+    "position_embedding" : "sine",
+    "keep_other_self_attn_dec" : false,
+    "keep_first_self_attn_dec" : false,
+    "keep_input_proj" : false
+  },
+  "DistributionConfig" : {
+    "world_size" : 1,
+    "rank" : 0,
+    "dist_url" : "tcp://127.0.0.1:3718",
+    "seed" : 42,
+    "local_rank" : -1,
+    "distributed" : false,
+    "device" : "cuda"
+  },
+  "LossConfig" : {
+    "loss" : "asl",
+    "eps" : 1e-5,
+    "dtgfl" : true,
+    "gamma_pos" : 1,
+    "gamma_neg" : 4,
+    "loss_dev" : -1,
+    "loss_clip" : 0.05,
+    "workers" : 32,
+    "val_interval" : 1,
+    "batch_size" : 16,
+    "learning_rate" : 0.0001,
+    "weight_decay" : 0.01,
+    "print_freq" : 100,
+    "resume_omit" : [],
+    "evaluate" :  false, 
+    "ema_decay" : 0.9997,
+    "ema_epoch" : 0
+  }
+}

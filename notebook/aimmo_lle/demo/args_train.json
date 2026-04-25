@@ -1,0 +1,19 @@
+{
+  "args": [
+    "--gpus",
+    "0",
+    "--batch-size",
+    "6",
+    "--num-workers",
+    "2",
+    "--train-config",
+    "config/train_cfg.json",
+    "--data-config",
+    "config/data_cfg.json",
+    "--epochs",
+    "30",
+    "--pretrained_path",
+    "/home/datalab/clid/vision_analysis/mlc/pretrained/swin_base_patch4_window12_384_22k.pth"
+
+  ]
+}

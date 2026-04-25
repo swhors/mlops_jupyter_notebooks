@@ -1,0 +1,17 @@
+{
+    "args": [
+      "--gpus",
+      "0",
+      "--batch-size",
+      "6",
+      "--num-workers",
+      "12",
+      "--pretrained_path",
+      "weights/weather_ad+bdd_0.2.0.pth.tar",
+      "--data-config",
+      "config/data_cfg.json",
+      "--save_path",
+      "/ext/Dataset/test"
+    ]
+  }
+  
